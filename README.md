@@ -8,6 +8,9 @@
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Running and Usage](#running-and-usage)
+  - [Built-in launcher results](#built-in-launcher-results)
+  - [Template URLs](#template-urls)
+- [Plugins](#plugins)
 - [FAQ](#faq)
   - [Why implement core features in plugins?](#why-implement-core-features-in-plugins)
   - [What is this built with?](#what-is-this-built-with)
@@ -100,6 +103,19 @@ There are no installers currently, just download one of the bundles from the rel
 - right arrow on an entry to get to Result Actions
 - Vim keys can be used to navigate entries by holding shift (so shift + hjkl)
 - Esc to exit
+- app may need to be killed from the shell with eg. `pkill epte` until a menu bar icon is added
+## Built-in launcher results
+- "bm " for bookmarks
+- "g " for Google autocomplete search
+- "z " for zsh or bash history
+- (MacOS only) "ct " for chrome tabs
+## Template URLs
+- template URLs are URLs which of the form `https://example.com?q={query}` which can have `{query}` replaced with the content of a clipboard entry or other result item in Epte. This can be used for search engine results from eg. Google, Bing, DuckDuckGo. Or for things like easily looking up logs in applications like Sumo or Datadog
+- template URLs can be added in the config.toml found either in `~/.epte/config.toml` for Linux or `~/Library/Application\ Support/epte/config.toml` for MacOS
+
+# Plugins
+- Plugins can be created by going to `~/Documents/epte/plugins_dev` and running `python3 create_plugin.py <pluginName>`
+- TODO more info here
 # FAQ
 ## Why implement core features in plugins?
 Two reasons primarily:
